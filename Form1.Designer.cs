@@ -78,23 +78,23 @@
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.txtrate = new System.Windows.Forms.TextBox();
             this.txtcutoff = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtincomcut = new System.Windows.Forms.TextBox();
             this.txtrate2 = new System.Windows.Forms.TextBox();
             this.txtcutoff2 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtincomcut2 = new System.Windows.Forms.TextBox();
             this.txtrate3 = new System.Windows.Forms.TextBox();
             this.txtcutoff3 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtincomcut3 = new System.Windows.Forms.TextBox();
             this.txtgross = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtinetincome = new System.Windows.Forms.TextBox();
+            this.txtfirst = new System.Windows.Forms.TextBox();
+            this.txtmiddle = new System.Windows.Forms.TextBox();
+            this.txtlast = new System.Windows.Forms.TextBox();
+            this.txtcivil = new System.Windows.Forms.TextBox();
             this.txtstatus = new System.Windows.Forms.TextBox();
             this.txtpaydate = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtEmploystats = new System.Windows.Forms.TextBox();
+            this.txtdesig = new System.Windows.Forms.TextBox();
             this.txtssscon = new System.Windows.Forms.TextBox();
             this.txtphilcon = new System.Windows.Forms.TextBox();
             this.txtpagibigcon = new System.Windows.Forms.TextBox();
@@ -105,8 +105,8 @@
             this.txtsavings = new System.Windows.Forms.TextBox();
             this.txtsalary = new System.Windows.Forms.TextBox();
             this.txtother = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txttotaldeduc = new System.Windows.Forms.TextBox();
+            this.BTNBROWSE = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -557,6 +557,7 @@
             this.txtrate.Name = "txtrate";
             this.txtrate.Size = new System.Drawing.Size(173, 20);
             this.txtrate.TabIndex = 48;
+            this.txtrate.TextChanged += new System.EventHandler(this.txtrate_TextChanged);
             // 
             // txtcutoff
             // 
@@ -564,14 +565,15 @@
             this.txtcutoff.Name = "txtcutoff";
             this.txtcutoff.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff.TabIndex = 49;
+            this.txtcutoff.TextChanged += new System.EventHandler(this.txtcutoff_TextChanged);
             // 
-            // textBox5
+            // txtincomcut
             // 
-            this.textBox5.Location = new System.Drawing.Point(154, 373);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(173, 20);
-            this.textBox5.TabIndex = 50;
+            this.txtincomcut.Location = new System.Drawing.Point(154, 373);
+            this.txtincomcut.Name = "txtincomcut";
+            this.txtincomcut.ReadOnly = true;
+            this.txtincomcut.Size = new System.Drawing.Size(173, 20);
+            this.txtincomcut.TabIndex = 50;
             // 
             // txtrate2
             // 
@@ -579,6 +581,7 @@
             this.txtrate2.Name = "txtrate2";
             this.txtrate2.Size = new System.Drawing.Size(173, 20);
             this.txtrate2.TabIndex = 51;
+            this.txtrate2.TextChanged += new System.EventHandler(this.txtrate2_TextChanged);
             // 
             // txtcutoff2
             // 
@@ -586,14 +589,15 @@
             this.txtcutoff2.Name = "txtcutoff2";
             this.txtcutoff2.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff2.TabIndex = 52;
+            this.txtcutoff2.TextChanged += new System.EventHandler(this.txtcutoff2_TextChanged);
             // 
-            // textBox8
+            // txtincomcut2
             // 
-            this.textBox8.Location = new System.Drawing.Point(154, 500);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(173, 20);
-            this.textBox8.TabIndex = 53;
+            this.txtincomcut2.Location = new System.Drawing.Point(154, 500);
+            this.txtincomcut2.Name = "txtincomcut2";
+            this.txtincomcut2.ReadOnly = true;
+            this.txtincomcut2.Size = new System.Drawing.Size(173, 20);
+            this.txtincomcut2.TabIndex = 53;
             // 
             // txtrate3
             // 
@@ -601,6 +605,7 @@
             this.txtrate3.Name = "txtrate3";
             this.txtrate3.Size = new System.Drawing.Size(173, 20);
             this.txtrate3.TabIndex = 54;
+            this.txtrate3.TextChanged += new System.EventHandler(this.txtrate3_TextChanged);
             // 
             // txtcutoff3
             // 
@@ -608,14 +613,15 @@
             this.txtcutoff3.Name = "txtcutoff3";
             this.txtcutoff3.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff3.TabIndex = 55;
+            this.txtcutoff3.TextChanged += new System.EventHandler(this.txtcutoff3_TextChanged);
             // 
-            // textBox11
+            // txtincomcut3
             // 
-            this.textBox11.Location = new System.Drawing.Point(154, 621);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(173, 20);
-            this.textBox11.TabIndex = 56;
+            this.txtincomcut3.Location = new System.Drawing.Point(154, 621);
+            this.txtincomcut3.Name = "txtincomcut3";
+            this.txtincomcut3.ReadOnly = true;
+            this.txtincomcut3.Size = new System.Drawing.Size(173, 20);
+            this.txtincomcut3.TabIndex = 56;
             // 
             // txtgross
             // 
@@ -623,46 +629,48 @@
             this.txtgross.Name = "txtgross";
             this.txtgross.Size = new System.Drawing.Size(173, 20);
             this.txtgross.TabIndex = 57;
+            this.txtgross.TextChanged += new System.EventHandler(this.txtgross_TextChanged);
             // 
-            // textBox13
+            // txtinetincome
             // 
-            this.textBox13.Location = new System.Drawing.Point(154, 710);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(173, 20);
-            this.textBox13.TabIndex = 58;
+            this.txtinetincome.Location = new System.Drawing.Point(154, 710);
+            this.txtinetincome.Name = "txtinetincome";
+            this.txtinetincome.ReadOnly = true;
+            this.txtinetincome.Size = new System.Drawing.Size(173, 20);
+            this.txtinetincome.TabIndex = 58;
+            this.txtinetincome.TextChanged += new System.EventHandler(this.txtinetincome_TextChanged);
             // 
-            // textBox14
+            // txtfirst
             // 
-            this.textBox14.Location = new System.Drawing.Point(789, 29);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(173, 20);
-            this.textBox14.TabIndex = 59;
+            this.txtfirst.Location = new System.Drawing.Point(789, 29);
+            this.txtfirst.Name = "txtfirst";
+            this.txtfirst.ReadOnly = true;
+            this.txtfirst.Size = new System.Drawing.Size(173, 20);
+            this.txtfirst.TabIndex = 59;
             // 
-            // textBox15
+            // txtmiddle
             // 
-            this.textBox15.Location = new System.Drawing.Point(789, 62);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(173, 20);
-            this.textBox15.TabIndex = 60;
+            this.txtmiddle.Location = new System.Drawing.Point(789, 62);
+            this.txtmiddle.Name = "txtmiddle";
+            this.txtmiddle.ReadOnly = true;
+            this.txtmiddle.Size = new System.Drawing.Size(173, 20);
+            this.txtmiddle.TabIndex = 60;
             // 
-            // textBox16
+            // txtlast
             // 
-            this.textBox16.Location = new System.Drawing.Point(789, 114);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(173, 20);
-            this.textBox16.TabIndex = 61;
+            this.txtlast.Location = new System.Drawing.Point(789, 114);
+            this.txtlast.Name = "txtlast";
+            this.txtlast.ReadOnly = true;
+            this.txtlast.Size = new System.Drawing.Size(173, 20);
+            this.txtlast.TabIndex = 61;
             // 
-            // textBox17
+            // txtcivil
             // 
-            this.textBox17.Location = new System.Drawing.Point(789, 162);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(173, 20);
-            this.textBox17.TabIndex = 62;
+            this.txtcivil.Location = new System.Drawing.Point(789, 162);
+            this.txtcivil.Name = "txtcivil";
+            this.txtcivil.ReadOnly = true;
+            this.txtcivil.Size = new System.Drawing.Size(173, 20);
+            this.txtcivil.TabIndex = 62;
             // 
             // txtstatus
             // 
@@ -679,21 +687,21 @@
             this.txtpaydate.TabIndex = 64;
             this.txtpaydate.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
-            // textBox21
+            // txtEmploystats
             // 
-            this.textBox21.Location = new System.Drawing.Point(821, 296);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(173, 20);
-            this.textBox21.TabIndex = 65;
+            this.txtEmploystats.Location = new System.Drawing.Point(821, 296);
+            this.txtEmploystats.Name = "txtEmploystats";
+            this.txtEmploystats.ReadOnly = true;
+            this.txtEmploystats.Size = new System.Drawing.Size(173, 20);
+            this.txtEmploystats.TabIndex = 65;
             // 
-            // textBox20
+            // txtdesig
             // 
-            this.textBox20.Location = new System.Drawing.Point(821, 337);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(173, 20);
-            this.textBox20.TabIndex = 66;
+            this.txtdesig.Location = new System.Drawing.Point(821, 337);
+            this.txtdesig.Name = "txtdesig";
+            this.txtdesig.ReadOnly = true;
+            this.txtdesig.Size = new System.Drawing.Size(173, 20);
+            this.txtdesig.TabIndex = 66;
             // 
             // txtssscon
             // 
@@ -702,6 +710,7 @@
             this.txtssscon.ReadOnly = true;
             this.txtssscon.Size = new System.Drawing.Size(173, 20);
             this.txtssscon.TabIndex = 67;
+            this.txtssscon.TextChanged += new System.EventHandler(this.txtssscon_TextChanged);
             // 
             // txtphilcon
             // 
@@ -769,23 +778,23 @@
             this.txtother.Size = new System.Drawing.Size(173, 20);
             this.txtother.TabIndex = 76;
             // 
-            // textBox32
+            // txttotaldeduc
             // 
-            this.textBox32.Location = new System.Drawing.Point(856, 774);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(173, 20);
-            this.textBox32.TabIndex = 77;
+            this.txttotaldeduc.Location = new System.Drawing.Point(856, 774);
+            this.txttotaldeduc.Name = "txttotaldeduc";
+            this.txttotaldeduc.ReadOnly = true;
+            this.txttotaldeduc.Size = new System.Drawing.Size(173, 20);
+            this.txttotaldeduc.TabIndex = 77;
             // 
-            // button1
+            // BTNBROWSE
             // 
-            this.button1.Location = new System.Drawing.Point(271, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 51);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTNBROWSE.Location = new System.Drawing.Point(271, 50);
+            this.BTNBROWSE.Name = "BTNBROWSE";
+            this.BTNBROWSE.Size = new System.Drawing.Size(146, 51);
+            this.BTNBROWSE.TabIndex = 78;
+            this.BTNBROWSE.Text = "Browse";
+            this.BTNBROWSE.UseVisualStyleBackColor = true;
+            this.BTNBROWSE.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -793,8 +802,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1139, 880);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox32);
+            this.Controls.Add(this.BTNBROWSE);
+            this.Controls.Add(this.txttotaldeduc);
             this.Controls.Add(this.txtother);
             this.Controls.Add(this.txtsalary);
             this.Controls.Add(this.txtsavings);
@@ -805,23 +814,23 @@
             this.Controls.Add(this.txtpagibigcon);
             this.Controls.Add(this.txtphilcon);
             this.Controls.Add(this.txtssscon);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.txtdesig);
+            this.Controls.Add(this.txtEmploystats);
             this.Controls.Add(this.txtpaydate);
             this.Controls.Add(this.txtstatus);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.txtcivil);
+            this.Controls.Add(this.txtlast);
+            this.Controls.Add(this.txtmiddle);
+            this.Controls.Add(this.txtfirst);
+            this.Controls.Add(this.txtinetincome);
             this.Controls.Add(this.txtgross);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtincomcut3);
             this.Controls.Add(this.txtcutoff3);
             this.Controls.Add(this.txtrate3);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtincomcut2);
             this.Controls.Add(this.txtcutoff2);
             this.Controls.Add(this.txtrate2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtincomcut);
             this.Controls.Add(this.txtcutoff);
             this.Controls.Add(this.txtrate);
             this.Controls.Add(this.txtDepartment);
@@ -874,6 +883,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -932,23 +942,23 @@
         private System.Windows.Forms.TextBox txtDepartment;
         private System.Windows.Forms.TextBox txtrate;
         private System.Windows.Forms.TextBox txtcutoff;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtincomcut;
         private System.Windows.Forms.TextBox txtrate2;
         private System.Windows.Forms.TextBox txtcutoff2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtincomcut2;
         private System.Windows.Forms.TextBox txtrate3;
         private System.Windows.Forms.TextBox txtcutoff3;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtincomcut3;
         private System.Windows.Forms.TextBox txtgross;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtinetincome;
+        private System.Windows.Forms.TextBox txtfirst;
+        private System.Windows.Forms.TextBox txtmiddle;
+        private System.Windows.Forms.TextBox txtlast;
+        private System.Windows.Forms.TextBox txtcivil;
         private System.Windows.Forms.TextBox txtstatus;
         private System.Windows.Forms.TextBox txtpaydate;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtEmploystats;
+        private System.Windows.Forms.TextBox txtdesig;
         private System.Windows.Forms.TextBox txtssscon;
         private System.Windows.Forms.TextBox txtphilcon;
         private System.Windows.Forms.TextBox txtpagibigcon;
@@ -959,8 +969,8 @@
         private System.Windows.Forms.TextBox txtsavings;
         private System.Windows.Forms.TextBox txtsalary;
         private System.Windows.Forms.TextBox txtother;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txttotaldeduc;
+        private System.Windows.Forms.Button BTNBROWSE;
     }
 }
 

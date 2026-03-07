@@ -92,7 +92,6 @@
             this.txtlast = new System.Windows.Forms.TextBox();
             this.txtcivil = new System.Windows.Forms.TextBox();
             this.txtstatus = new System.Windows.Forms.TextBox();
-            this.txtpaydate = new System.Windows.Forms.TextBox();
             this.txtEmploystats = new System.Windows.Forms.TextBox();
             this.txtdesig = new System.Windows.Forms.TextBox();
             this.txtssscon = new System.Windows.Forms.TextBox();
@@ -107,6 +106,7 @@
             this.txtother = new System.Windows.Forms.TextBox();
             this.txttotaldeduc = new System.Windows.Forms.TextBox();
             this.BTNBROWSE = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +116,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(33, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 155);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -534,6 +535,7 @@
             this.btnNew.TabIndex = 45;
             this.btnNew.Text = "NEW";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // txtEmployeenum
             // 
@@ -558,6 +560,7 @@
             this.txtrate.Size = new System.Drawing.Size(173, 20);
             this.txtrate.TabIndex = 48;
             this.txtrate.TextChanged += new System.EventHandler(this.txtrate_TextChanged);
+            this.txtrate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrate1);
             // 
             // txtcutoff
             // 
@@ -590,6 +593,7 @@
             this.txtcutoff2.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff2.TabIndex = 52;
             this.txtcutoff2.TextChanged += new System.EventHandler(this.txtcutoff2_TextChanged);
+            this.txtcutoff2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt);
             // 
             // txtincomcut2
             // 
@@ -679,14 +683,6 @@
             this.txtstatus.Size = new System.Drawing.Size(173, 20);
             this.txtstatus.TabIndex = 63;
             // 
-            // txtpaydate
-            // 
-            this.txtpaydate.Location = new System.Drawing.Point(789, 257);
-            this.txtpaydate.Name = "txtpaydate";
-            this.txtpaydate.Size = new System.Drawing.Size(173, 20);
-            this.txtpaydate.TabIndex = 64;
-            this.txtpaydate.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
-            // 
             // txtEmploystats
             // 
             this.txtEmploystats.Location = new System.Drawing.Point(821, 296);
@@ -710,6 +706,7 @@
             this.txtssscon.ReadOnly = true;
             this.txtssscon.Size = new System.Drawing.Size(173, 20);
             this.txtssscon.TabIndex = 67;
+            this.txtssscon.Text = "0";
             this.txtssscon.TextChanged += new System.EventHandler(this.txtssscon_TextChanged);
             // 
             // txtphilcon
@@ -719,6 +716,8 @@
             this.txtphilcon.ReadOnly = true;
             this.txtphilcon.Size = new System.Drawing.Size(173, 20);
             this.txtphilcon.TabIndex = 68;
+            this.txtphilcon.Text = "0";
+            this.txtphilcon.TextChanged += new System.EventHandler(this.txtphilcon_TextChanged);
             // 
             // txtpagibigcon
             // 
@@ -727,6 +726,7 @@
             this.txtpagibigcon.ReadOnly = true;
             this.txtpagibigcon.Size = new System.Drawing.Size(173, 20);
             this.txtpagibigcon.TabIndex = 69;
+            this.txtpagibigcon.Text = "0";
             // 
             // txtincomecon
             // 
@@ -735,6 +735,7 @@
             this.txtincomecon.ReadOnly = true;
             this.txtincomecon.Size = new System.Drawing.Size(173, 20);
             this.txtincomecon.TabIndex = 70;
+            this.txtincomecon.Text = "0";
             // 
             // txtsssloan
             // 
@@ -742,6 +743,7 @@
             this.txtsssloan.Name = "txtsssloan";
             this.txtsssloan.Size = new System.Drawing.Size(173, 20);
             this.txtsssloan.TabIndex = 71;
+            this.txtsssloan.Text = "0.00";
             // 
             // txtpagibigload
             // 
@@ -749,6 +751,7 @@
             this.txtpagibigload.Name = "txtpagibigload";
             this.txtpagibigload.Size = new System.Drawing.Size(173, 20);
             this.txtpagibigload.TabIndex = 72;
+            this.txtpagibigload.Text = "0.00";
             // 
             // txtdeposit
             // 
@@ -756,6 +759,7 @@
             this.txtdeposit.Name = "txtdeposit";
             this.txtdeposit.Size = new System.Drawing.Size(173, 20);
             this.txtdeposit.TabIndex = 73;
+            this.txtdeposit.Text = "0.00";
             // 
             // txtsavings
             // 
@@ -763,6 +767,7 @@
             this.txtsavings.Name = "txtsavings";
             this.txtsavings.Size = new System.Drawing.Size(173, 20);
             this.txtsavings.TabIndex = 74;
+            this.txtsavings.Text = "0.00";
             // 
             // txtsalary
             // 
@@ -770,6 +775,7 @@
             this.txtsalary.Name = "txtsalary";
             this.txtsalary.Size = new System.Drawing.Size(173, 20);
             this.txtsalary.TabIndex = 75;
+            this.txtsalary.Text = "0.00";
             // 
             // txtother
             // 
@@ -777,6 +783,7 @@
             this.txtother.Name = "txtother";
             this.txtother.Size = new System.Drawing.Size(173, 20);
             this.txtother.TabIndex = 76;
+            this.txtother.Text = "0.00";
             // 
             // txttotaldeduc
             // 
@@ -796,12 +803,20 @@
             this.BTNBROWSE.UseVisualStyleBackColor = true;
             this.BTNBROWSE.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(821, 260);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 79;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1139, 880);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BTNBROWSE);
             this.Controls.Add(this.txttotaldeduc);
             this.Controls.Add(this.txtother);
@@ -816,7 +831,6 @@
             this.Controls.Add(this.txtssscon);
             this.Controls.Add(this.txtdesig);
             this.Controls.Add(this.txtEmploystats);
-            this.Controls.Add(this.txtpaydate);
             this.Controls.Add(this.txtstatus);
             this.Controls.Add(this.txtcivil);
             this.Controls.Add(this.txtlast);
@@ -956,7 +970,6 @@
         private System.Windows.Forms.TextBox txtlast;
         private System.Windows.Forms.TextBox txtcivil;
         private System.Windows.Forms.TextBox txtstatus;
-        private System.Windows.Forms.TextBox txtpaydate;
         private System.Windows.Forms.TextBox txtEmploystats;
         private System.Windows.Forms.TextBox txtdesig;
         private System.Windows.Forms.TextBox txtssscon;
@@ -971,6 +984,7 @@
         private System.Windows.Forms.TextBox txtother;
         private System.Windows.Forms.TextBox txttotaldeduc;
         private System.Windows.Forms.Button BTNBROWSE;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

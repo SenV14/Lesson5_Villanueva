@@ -19,10 +19,10 @@ namespace Lesson5_Villanueva
              mname = "Villanueva",
              civilstatus = "SINGLE",
              quali_stats = "Yes",
-             employeestatus = "Unemployed",
+             //employeestats = "Unemployed",
              designation = "Junior Software Developer";
-
-        private double paydate = 0,
+        
+        private double 
             rates1 = 0,
              cutoffs1 = 0,
              rates2 = 0,
@@ -39,11 +39,64 @@ namespace Lesson5_Villanueva
              salary_loan = 0,
              Other_loand = 0,
              total_Deduction = 0,
+            employeenumber = 0,
                ssscon = 0,
             pagibigcon = 0,
             philhealthcon = 0,
             total_deduction = 0,
-            Other_loan = 0;
+            Other_loan = 0,
+            msc = 0,
+            mscphil = 0,
+            mscpagibig = 0;
+
+        private void txtphilcon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtrate1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            txtfirst.Clear();
+            txtlast.Clear();
+            txtmiddle.Clear();
+            txtcivil.Clear();
+            txtstatus.Clear();
+            txtcivil.Clear();
+            txtdesig.Clear();
+            txtEmploystats.Clear();
+            txtrate.Clear();
+            txtrate2.Clear();
+            txtrate3.Clear();
+            txtcutoff.Clear();
+            txtcutoff2.Clear();
+            txtcutoff3.Clear();
+            txtincomcut.Clear();
+            txtincomcut2.Clear();
+            txtincomcut3.Clear();
+            txtgross.Clear();
+            txtinetincome.Clear();
+            txttotaldeduc.Clear();
+            txtEmployeenum.Clear();
+            txtssscon.Clear();
+            txtpagibigcon.Clear();
+            txtphilcon.Clear();
+            txtpagibigload.Clear();
+            txtsssloan.Clear();
+            txtdeposit.Clear();
+            txtsavings.Clear();
+            txtsalary.Clear();
+            txtother.Clear();
+        }
 
         private void txtssscon_TextChanged(object sender, EventArgs e)
         {
@@ -256,6 +309,7 @@ namespace Lesson5_Villanueva
 
         private void btncross_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 double.TryParse(txtrate.Text, out rates1);
@@ -287,49 +341,60 @@ namespace Lesson5_Villanueva
                 {
                     try
                     {
+                       
                         double.TryParse(txtgross.Text, out grosspay);
                         double.TryParse(txtssscon.Text, out ssscon);
                         double.TryParse(txtpagibigcon.Text, out pagibigcon);
                         double.TryParse(txtphilcon.Text, out philhealthcon);
-                        if (grosspay <= 35000)
+                        if (grosspay <= 5250)
                         {
-
-                            ssscon = grosspay * 0.15;
+                            msc = 5000;
                         }
-                        else if (grosspay > 35000)
+                        else if (grosspay >= 34750)
                         {
-
-                            ssscon = 35000 * 0.15;
+                            msc = 35000;
                         }
-                        else
+                        else if (grosspay > 5250 | grosspay < 34750)
                         {
-                            MessageBox.Show("Please put a valid number inside the box");
-                            txtgross.Clear();
-                            txtssscon.Clear();
-                        }
-                        //pagibig contribution
-                        if (grosspay <= 100000)
-                        {
-                            philhealthcon = grosspay * 0.05;
-                        }
-                        else if (grosspay > 100000)
-                        {
-                            philhealthcon = 100000 * 0.05;
-                        }
-                        else
+                            msc = (grosspay / 500) * 500;
+                        } else
                         {
                             MessageBox.Show("Please put a valid number inside the box");
                             txtgross.Clear();
                             txtssscon.Clear();
                         }
-                        //pagibig contribution
+
+                        //philhealth Contribution
                         if (grosspay <= 10000)
                         {
-                            pagibigcon = grosspay * 0.02;
+                            mscphil = 500;
+                        }
+                        else if (grosspay >= 100000)
+                        {
+                            mscphil = 5000;
+                        }
+                        else if (grosspay > 10000 | grosspay < 100000)
+                        {
+                            mscphil = (grosspay / 500) * 500;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please put a valid number inside the box");
+                            txtgross.Clear();
+                            txtssscon.Clear();
+                        }
+                        //pagibig contribution
+                        if (grosspay <= 1500)
+                        {
+                            mscpagibig = 200;
                         }
                         else if (grosspay > 10000)
                         {
-                            pagibigcon = 10000 * 0.02;
+                            mscpagibig = 10000;
+                        }
+                        else if (grosspay > 1500 | grosspay < 10000) 
+                        {
+                            mscpagibig = (grosspay / 500) * 500;
                         }
                         else
                         {
@@ -337,6 +402,9 @@ namespace Lesson5_Villanueva
                             txtgross.Clear();
                             txtssscon.Clear();
                         }
+                        ssscon = msc * .015;
+                       philhealthcon = mscphil * 0.05;
+                        pagibigcon = mscpagibig * 0.02;
                         txtssscon.Text = ssscon.ToString();
                         txtphilcon.Text = philhealthcon.ToString();
                         txtpagibigcon.Text = pagibigcon.ToString();
@@ -361,7 +429,9 @@ namespace Lesson5_Villanueva
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-
+             
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -377,21 +447,33 @@ namespace Lesson5_Villanueva
                 txtfirst.Text = fname;
                 txtmiddle.Text = mname;
                 txtlast.Text = lname;
+                txtdesig.Text = designation;
+                txtstatus.Text = quali_stats;
+                txtcivil.Text = civilstatus;
+                txtdesig.Text = designation;
+                //txtEmploystats = employeestats;
+
+
             }
 
         }
 
         private void txtEmployeenum_TextChanged(object sender, EventArgs e)
         {
-            double value1;
-            int employee1 = 1;
-            int employee2 = 2;
-            double.TryParse(txtEmployeenum.Text, out value1);
-            if (value1 != employee1 || value1 != employee2)
+            try
             {
-                MessageBox.Show("Please put a number inside");
+                
+
+                double.TryParse(txtEmployeenum.Text, out employeenumber);
+                if (!double.TryParse(txtEmployeenum.Text, out employeenumber))
+                {
+                    MessageBox.Show("Please put a number inside");
+                }
             }
-            
+            catch(FormatException)
+            {
+                MessageBox.Show("Wrong Value Please try again");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

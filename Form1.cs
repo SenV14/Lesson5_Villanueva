@@ -20,14 +20,19 @@ namespace Lesson5_Villanueva
              civilstatus = "SINGLE",
              quali_stats = "Yes",
              //employeestats = "Unemployed",
-             designation = "Junior Software Developer";
-        
-        private double 
+             designation = "Junior Software Developer",
+               department = "College of Engineering,Computer Studies and Architecture";
+
+
+        private double
             rates1 = 0,
              cutoffs1 = 0,
              rates2 = 0,
              cutoffs2 = 0,
              rates3 = 0,
+            income_cut1 = 0,
+            income_cut2 = 0,
+             income_cut3 = 0,
              cutoffs3 = 0,
              grosspay = 0,
              net_income = 0,
@@ -49,6 +54,102 @@ namespace Lesson5_Villanueva
             mscphil = 0,
             mscpagibig = 0;
 
+            private double
+            taxcut = 0;
+
+
+        private void txtincomecon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtkeypress_employeenum(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDepartment_TextChanged(object sender, EventArgs e)
+        {
+         txtDepartment.Text = department;
+        }
+
+        private void txtcut3_kepress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtincomcut_TextChanged(object sender, EventArgs e)
+        {
+      
+
+        }
+
+        private void txtincomcut2_TextChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void txtpress_cut2(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtpress_cut3(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtincomcut3_TextChanged(object sender, EventArgs e)
+        {
+     
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void keypress_cut1(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void keypress_rate3(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_keypressrate1(object sender, KeyPressEventArgs e)
+        {
+         if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rate2_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtphilcon_TextChanged(object sender, EventArgs e)
         {
 
@@ -56,7 +157,11 @@ namespace Lesson5_Villanueva
 
         private void txtrate1(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
 
+            }
         }
 
         private void txt(object sender, KeyPressEventArgs e)
@@ -105,7 +210,7 @@ namespace Lesson5_Villanueva
 
         private void txtgross_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtinetincome_TextChanged(object sender, EventArgs e)
@@ -114,151 +219,35 @@ namespace Lesson5_Villanueva
         }
 
         private void txtrate3_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (!double.TryParse(txtrate3.Text, out rates3))
-                {
-                    MessageBox.Show("Please enter a valid number.");
-                    txtrate.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate3.Text, out rates3);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Wrong value");
-            }
-        }
-
+        { }
+           //
+        
+        //
         private void txtrate2_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (!double.TryParse(txtrate2.Text, out rates2))
-                {
-                    MessageBox.Show("Please enter a valid number.");
-                    txtrate.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate2.Text, out rates2);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Wrong value");
-            }
-        }
-
+        { }
         private void txtrate_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-               
-                if (!double.TryParse(txtrate.Text, out rates1))
-                {
-                    MessageBox.Show("Please enter a valid number.");
-                    txtrate.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate.Text, out rates1);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Wrong value");
-            }
+            //
+            //
         }
+        //
 
         private void txtcutoff3_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!double.TryParse(txtcutoff3.Text, out cutoffs3))
-                {
-                    MessageBox.Show("Please enter a valid number for cutoff.");
-                    txtcutoff3.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate3.Text, out rates3);
-                    double.TryParse(txtcutoff3.Text, out cutoffs3);
-
-
-                    txtincomcut3.Text = (rates3 * cutoffs3).ToString();
-
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There is no value inside");
-            }
-        }
-
+        { }
+          //
+        //
+        
+        //
         private void txtcutoff2_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!double.TryParse(txtcutoff2.Text, out cutoffs2))
-                {
-                    MessageBox.Show("Please enter a valid number for cutoff.");
-                    txtcutoff2.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate2.Text, out rates2);
-                    double.TryParse(txtcutoff2.Text, out cutoffs2);
-
-
-                    txtincomcut2.Text = (rates2 * cutoffs2).ToString();
-             
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There is no value inside");
-            }
-        }
-
+        { }
+       //
+       //
         private void txtcutoff_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if(!double.TryParse(txtcutoff.Text, out cutoffs1))
-                {
-                    MessageBox.Show("Please enter a valid number for cutoff.");
-                    txtcutoff.Clear();
-                }
-                else
-                {
-                    double.TryParse(txtrate.Text, out rates1);
-                    double.TryParse(txtcutoff.Text, out cutoffs1);
-                    txtincomcut.Text = (rates1 * cutoffs1).ToString();
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There is no value inside");
-            }
-            
-        }
-
-        public Form1()
-        {
-            InitializeComponent();
-          
-
-
-        }
-
+        { 
+        //
+        //
+        }//
+        //
         private void label22_Click(object sender, EventArgs e)
         {
 
@@ -271,8 +260,7 @@ namespace Lesson5_Villanueva
 
         private void btnNet_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 if (!double.TryParse(txtgross.Text, out grosspay) ||
                     !double.TryParse(txtssscon.Text, out ssscon) ||
                     !double.TryParse(txtpagibigcon.Text, out pagibigcon) ||
@@ -293,145 +281,182 @@ namespace Lesson5_Villanueva
                     double.TryParse(txtsavings.Text, out salary_loan);
                     double.TryParse(txtother.Text, out Other_loan);
                     double.TryParse(txtgross.Text, out grosspay);
+                    double.TryParse(txtssscon.Text, out ssscon);
+                    double.TryParse(txtpagibigcon.Text, out pagibigcon);
+                    double.TryParse(txtphilcon.Text, out philhealthcon);
+                    //Operation for total deduction
                     total_deduction = philhealth_Loand + sss_Loand + pagibig_Loand + salary_loan + Faculty_deposit + Faculty_savings + Other_loan 
-                        + double.Parse(txtssscon.Text) + double.Parse(txtpagibigcon.Text) + double.Parse(txtphilcon.Text); 
-                    
+                        + ssscon + pagibigcon + philhealthcon;
+                    // operation for net income
                     txttotaldeduc.Text = total_deduction.ToString();
                     net_income = (grosspay - total_deduction);
                     txtinetincome.Text = net_income.ToString();
                 }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Wrong Value");
-            }
+            
         }
 
         private void btncross_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
-                double.TryParse(txtrate.Text, out rates1);
-                double.TryParse(txtcutoff.Text, out cutoffs1);
-                double.TryParse(txtrate2.Text, out rates2);
-                double.TryParse(txtcutoff2.Text, out cutoffs2);
-                double.TryParse(txtrate3.Text, out rates3);
-                double.TryParse(txtcutoff3.Text, out cutoffs3);
-                if (!double.TryParse(txtrate.Text, out rates1) ||
-                    !double.TryParse(txtcutoff.Text, out cutoffs1) ||
-                    !double.TryParse(txtrate2.Text, out rates2) ||
-                    !double.TryParse(txtcutoff2.Text, out cutoffs2) ||
-                    !double.TryParse(txtrate3.Text, out rates3) ||
-                    !double.TryParse(txtcutoff3.Text, out cutoffs3))
-                {
-                    MessageBox.Show("Put a value inside the box");
-                    txtrate.Clear();
-                    txtcutoff.Clear();
-                    txtrate2.Clear();
-                    txtcutoff2.Clear();
-                    txtcutoff3.Clear();
-                    txtrate3.Clear();
-                    txtincomcut.Clear();
-                    txtincomcut2.Clear();
-                    txtincomcut3.Clear();
-                    txtrate.Focus();
-                }
-                else
-                {
-                    try
-                    {
-                       
-                        double.TryParse(txtgross.Text, out grosspay);
-                        double.TryParse(txtssscon.Text, out ssscon);
-                        double.TryParse(txtpagibigcon.Text, out pagibigcon);
-                        double.TryParse(txtphilcon.Text, out philhealthcon);
-                        if (grosspay <= 5250)
-                        {
-                            msc = 5000;
-                        }
-                        else if (grosspay >= 34750)
-                        {
-                            msc = 35000;
-                        }
-                        else if (grosspay > 5250 | grosspay < 34750)
-                        {
-                            msc = (grosspay / 500) * 500;
-                        } else
-                        {
-                            MessageBox.Show("Please put a valid number inside the box");
-                            txtgross.Clear();
-                            txtssscon.Clear();
-                        }
 
-                        //philhealth Contribution
-                        if (grosspay <= 10000)
-                        {
-                            mscphil = 500;
-                        }
-                        else if (grosspay >= 100000)
-                        {
-                            mscphil = 5000;
-                        }
-                        else if (grosspay > 10000 | grosspay < 100000)
-                        {
-                            mscphil = (grosspay / 500) * 500;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please put a valid number inside the box");
-                            txtgross.Clear();
-                            txtssscon.Clear();
-                        }
-                        //pagibig contribution
-                        if (grosspay <= 1500)
-                        {
-                            mscpagibig = 200;
-                        }
-                        else if (grosspay > 10000)
-                        {
-                            mscpagibig = 10000;
-                        }
-                        else if (grosspay > 1500 | grosspay < 10000) 
-                        {
-                            mscpagibig = (grosspay / 500) * 500;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please put a valid number inside the box");
-                            txtgross.Clear();
-                            txtssscon.Clear();
-                        }
-                        ssscon = msc * .015;
-                       philhealthcon = mscphil * 0.05;
-                        pagibigcon = mscpagibig * 0.02;
-                        txtssscon.Text = ssscon.ToString();
-                        txtphilcon.Text = philhealthcon.ToString();
-                        txtpagibigcon.Text = pagibigcon.ToString();
-                        txtgross.Text = (double.Parse(txtincomcut.Text) + double.Parse(txtincomcut2.Text) + double.Parse(txtincomcut3.Text)).ToString();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("There is no value inside");
-                    }
+            try
+            { //validation for gross pay and contributions
+                double.TryParse(txtgross.Text, out grosspay);
+                double.TryParse(txtssscon.Text, out ssscon);
+                double.TryParse(txtpagibigcon.Text, out pagibigcon);
+                double.TryParse(txtphilcon.Text, out philhealthcon);
+                double.TryParse(txtincomcut.Text, out income_cut1);
+                double.TryParse(txtincomcut2.Text, out income_cut2);
+                double.TryParse(txtincomcut3.Text, out income_cut3);
+                double.TryParse(txtcutoff.Text, out cutoffs1);
+                double.TryParse(txtcutoff2.Text, out cutoffs2);
+                double.TryParse(txtcutoff3.Text, out cutoffs3);
+                double.TryParse(txtrate.Text, out rates1);
+                double.TryParse(txtrate2.Text, out rates2);
+                double.TryParse(txtrate3.Text, out rates3);
+                double.TryParse(txtincomecon.Text, out taxcut);
+                txtincomcut.Text = (cutoffs1 * rates1).ToString();
+                txtincomcut2.Text = (cutoffs2 * rates2).ToString();
+                txtincomcut3.Text = (cutoffs3 * rates3).ToString();
+                txtgross.Text = (income_cut1 + income_cut2 + income_cut3).ToString();
+                if (grosspay <= 5250)
+                {
+                    msc = 5000;
+                }
+                else if (grosspay >= 34750)
+                {
+                    msc = 35000;
+                }
+                else if (grosspay > 5250 | grosspay < 34750)
+                {
+                    msc = (grosspay / 500) * 500;
+
+                }
+
+                //philhealth Contribution
+                if (grosspay <= 10000)
+                {
+                    mscphil = 500 /2;
+                    philhealthcon = mscphil;
+                }
+                else if (grosspay >= 100000)
+                {
+                    mscphil = 5000 /2;
+                    philhealthcon = mscphil;
+                }
+                else if (grosspay > 10000 | grosspay < 100000)
+                {
+
+                    mscphil = (grosspay * 0.05) / 2;
+                    philhealthcon = mscphil;
+
+                }
+
+                //pagibig contribution
+                if (grosspay <= 1500)
+                {
+                    pagibigcon = grosspay * 0.01;
+                }
+                else if (grosspay > 10000)
+                {
+                    
+                    pagibigcon = 200;
+                   
+
+                }
+                else if (grosspay > 1500 | grosspay < 10000)
+                {
+                    pagibigcon = grosspay * 0.02;
                     
                 }
-
+                //Income tax contribution
+                if (grosspay <= 20833)
+                {
+                    taxcut = grosspay * 0.2;
+                }
+                else if (grosspay > 20833 | grosspay <= 33332)
+                {
+                    taxcut = grosspay * 0.25;
+                }
+                else if (grosspay > 33332 | grosspay <= 66666)
+                {
+                    taxcut = grosspay * 0.3;
+                }
+                else if (grosspay > 66666 | grosspay <= 166666)
+                {
+                    taxcut = grosspay * 0.32;
+                }
+                else if (grosspay > 166666 | grosspay <= 666666)
+                {
+                    taxcut = grosspay * 0.35;
+                }
+                else if (grosspay > 666666)
+                {
+                    taxcut = grosspay * 0.35;
+                }
+                ssscon = msc * 0.15 ;
+                pagibigcon = Math.Round(pagibigcon);
+                txtssscon.Text = ssscon.ToString();
+                txtphilcon.Text = philhealthcon.ToString();
+                txtpagibigcon.Text = pagibigcon.ToString();
+                txtincomecon.Text = taxcut.ToString();
+                income_cut3.ToString();
+                income_cut1.ToString();
+                income_cut2.ToString();
             }
             catch (Exception)
             {
-                MessageBox.Show("Something Happened while running the system...");
+                MessageBox.Show("There is no value inside");
             }
-
-
-
-        }
+        }//
+                  //
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-             
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            try
+            {   
+                    if (string.IsNullOrEmpty(txtgross.Text) && string.IsNullOrEmpty(txtinetincome.Text))
+                    {
+                        MessageBox.Show("Please calculate the gross pay and net income before saving.");
+                }
+                 
+                    else 
+                        {
+                            string txtcompanyname = "Lyceum of the Philippines Cavite";
+                            double.TryParse(txtEmployeenum.Text, out double employeenumber);
+                            string department = txtDepartment.Text;
+                            string emplyeename = $"{txtfirst.Text} {txtmiddle.Text} {txtlast.Text}";
+                            datepaydate.Text = DateTime.Now.ToShortDateString();
+                            string datepaydate1 = datepaydate.Text;
+                            double.TryParse(txtincomecon.Text, out double taxcut);
+                            double.TryParse(txtincomcut.Text, out double income_cut1);
+                            double.TryParse(txtincomcut2.Text, out double income_cut2);
+                            double.TryParse(txtincomcut3.Text, out double income_cut3);
+                            double honorarium_adjust = 0;
+                            double subs = 0;
+                            double tards = 0;
+                            double.TryParse(txtssscon.Text, out double ssscon);
+                            double.TryParse(txtphilcon.Text, out double philhealthcon);
+                            double.TryParse(txtpagibigcon.Text, out double pagibigcon);
+                            double ssswisp = 750;
+                            double HDMF = 200;
+                            string taxes2 = txtincomecon.Text;
+                            double.TryParse(txtgross.Text, out grosspay);
+                            double.TryParse(txttotaldeduc.Text, out total_deduction);
+
+
+
+                            Form2 form2 = new Form2(txtcompanyname, employeenumber, emplyeename, department, datepaydate1,
+                                                    taxcut, income_cut1, income_cut2, income_cut3, honorarium_adjust,
+                                                    subs, tards, ssscon, philhealthcon, pagibigcon, ssswisp, HDMF, taxes2, grosspay, total_deduction);
+                            form2.ShowDialog();
+                            this.Hide();
+                        }
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid numbers for gross pay and contributions.");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -451,7 +476,9 @@ namespace Lesson5_Villanueva
                 txtstatus.Text = quali_stats;
                 txtcivil.Text = civilstatus;
                 txtdesig.Text = designation;
-                //txtEmploystats = employeestats;
+
+                //txtEmploystats = civilstatus.ToString();
+                
 
 
             }
@@ -460,20 +487,10 @@ namespace Lesson5_Villanueva
 
         private void txtEmployeenum_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                
-
-                double.TryParse(txtEmployeenum.Text, out employeenumber);
-                if (!double.TryParse(txtEmployeenum.Text, out employeenumber))
-                {
-                    MessageBox.Show("Please put a number inside");
-                }
-            }
-            catch(FormatException)
-            {
-                MessageBox.Show("Wrong Value Please try again");
-            }
+            //
+            //
+            double.TryParse(txtEmployeenum.Text, out employeenumber);
+            //
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -106,7 +106,7 @@
             this.txtother = new System.Windows.Forms.TextBox();
             this.txttotaldeduc = new System.Windows.Forms.TextBox();
             this.BTNBROWSE = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datepaydate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -544,14 +544,15 @@
             this.txtEmployeenum.Size = new System.Drawing.Size(173, 20);
             this.txtEmployeenum.TabIndex = 46;
             this.txtEmployeenum.TextChanged += new System.EventHandler(this.txtEmployeenum_TextChanged);
+            this.txtEmployeenum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtkeypress_employeenum);
             // 
             // txtDepartment
             // 
             this.txtDepartment.Location = new System.Drawing.Point(154, 245);
             this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.ReadOnly = true;
             this.txtDepartment.Size = new System.Drawing.Size(173, 20);
             this.txtDepartment.TabIndex = 47;
+            this.txtDepartment.TextChanged += new System.EventHandler(this.txtDepartment_TextChanged);
             // 
             // txtrate
             // 
@@ -560,7 +561,7 @@
             this.txtrate.Size = new System.Drawing.Size(173, 20);
             this.txtrate.TabIndex = 48;
             this.txtrate.TextChanged += new System.EventHandler(this.txtrate_TextChanged);
-            this.txtrate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrate1);
+            this.txtrate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_keypressrate1);
             // 
             // txtcutoff
             // 
@@ -569,6 +570,7 @@
             this.txtcutoff.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff.TabIndex = 49;
             this.txtcutoff.TextChanged += new System.EventHandler(this.txtcutoff_TextChanged);
+            this.txtcutoff.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_cut1);
             // 
             // txtincomcut
             // 
@@ -577,6 +579,7 @@
             this.txtincomcut.ReadOnly = true;
             this.txtincomcut.Size = new System.Drawing.Size(173, 20);
             this.txtincomcut.TabIndex = 50;
+            this.txtincomcut.TextChanged += new System.EventHandler(this.txtincomcut_TextChanged);
             // 
             // txtrate2
             // 
@@ -585,6 +588,7 @@
             this.txtrate2.Size = new System.Drawing.Size(173, 20);
             this.txtrate2.TabIndex = 51;
             this.txtrate2.TextChanged += new System.EventHandler(this.txtrate2_TextChanged);
+            this.txtrate2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rate2_keypress);
             // 
             // txtcutoff2
             // 
@@ -593,7 +597,7 @@
             this.txtcutoff2.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff2.TabIndex = 52;
             this.txtcutoff2.TextChanged += new System.EventHandler(this.txtcutoff2_TextChanged);
-            this.txtcutoff2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt);
+            this.txtcutoff2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpress_cut2);
             // 
             // txtincomcut2
             // 
@@ -602,6 +606,7 @@
             this.txtincomcut2.ReadOnly = true;
             this.txtincomcut2.Size = new System.Drawing.Size(173, 20);
             this.txtincomcut2.TabIndex = 53;
+            this.txtincomcut2.TextChanged += new System.EventHandler(this.txtincomcut2_TextChanged);
             // 
             // txtrate3
             // 
@@ -610,6 +615,7 @@
             this.txtrate3.Size = new System.Drawing.Size(173, 20);
             this.txtrate3.TabIndex = 54;
             this.txtrate3.TextChanged += new System.EventHandler(this.txtrate3_TextChanged);
+            this.txtrate3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_rate3);
             // 
             // txtcutoff3
             // 
@@ -618,6 +624,7 @@
             this.txtcutoff3.Size = new System.Drawing.Size(173, 20);
             this.txtcutoff3.TabIndex = 55;
             this.txtcutoff3.TextChanged += new System.EventHandler(this.txtcutoff3_TextChanged);
+            this.txtcutoff3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcut3_kepress);
             // 
             // txtincomcut3
             // 
@@ -626,11 +633,13 @@
             this.txtincomcut3.ReadOnly = true;
             this.txtincomcut3.Size = new System.Drawing.Size(173, 20);
             this.txtincomcut3.TabIndex = 56;
+            this.txtincomcut3.TextChanged += new System.EventHandler(this.txtincomcut3_TextChanged);
             // 
             // txtgross
             // 
             this.txtgross.Location = new System.Drawing.Point(154, 681);
             this.txtgross.Name = "txtgross";
+            this.txtgross.ReadOnly = true;
             this.txtgross.Size = new System.Drawing.Size(173, 20);
             this.txtgross.TabIndex = 57;
             this.txtgross.TextChanged += new System.EventHandler(this.txtgross_TextChanged);
@@ -706,7 +715,7 @@
             this.txtssscon.ReadOnly = true;
             this.txtssscon.Size = new System.Drawing.Size(173, 20);
             this.txtssscon.TabIndex = 67;
-            this.txtssscon.Text = "0";
+            this.txtssscon.Text = "0.00";
             this.txtssscon.TextChanged += new System.EventHandler(this.txtssscon_TextChanged);
             // 
             // txtphilcon
@@ -716,7 +725,7 @@
             this.txtphilcon.ReadOnly = true;
             this.txtphilcon.Size = new System.Drawing.Size(173, 20);
             this.txtphilcon.TabIndex = 68;
-            this.txtphilcon.Text = "0";
+            this.txtphilcon.Text = "0.00";
             this.txtphilcon.TextChanged += new System.EventHandler(this.txtphilcon_TextChanged);
             // 
             // txtpagibigcon
@@ -726,7 +735,7 @@
             this.txtpagibigcon.ReadOnly = true;
             this.txtpagibigcon.Size = new System.Drawing.Size(173, 20);
             this.txtpagibigcon.TabIndex = 69;
-            this.txtpagibigcon.Text = "0";
+            this.txtpagibigcon.Text = "0.00";
             // 
             // txtincomecon
             // 
@@ -735,7 +744,8 @@
             this.txtincomecon.ReadOnly = true;
             this.txtincomecon.Size = new System.Drawing.Size(173, 20);
             this.txtincomecon.TabIndex = 70;
-            this.txtincomecon.Text = "0";
+            this.txtincomecon.Text = "0.00";
+            this.txtincomecon.TextChanged += new System.EventHandler(this.txtincomecon_TextChanged);
             // 
             // txtsssloan
             // 
@@ -803,12 +813,12 @@
             this.BTNBROWSE.UseVisualStyleBackColor = true;
             this.BTNBROWSE.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // datepaydate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(821, 260);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 79;
+            this.datepaydate.Location = new System.Drawing.Point(821, 260);
+            this.datepaydate.Name = "datepaydate";
+            this.datepaydate.Size = new System.Drawing.Size(200, 20);
+            this.datepaydate.TabIndex = 79;
             // 
             // Form1
             // 
@@ -816,7 +826,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1139, 880);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datepaydate);
             this.Controls.Add(this.BTNBROWSE);
             this.Controls.Add(this.txttotaldeduc);
             this.Controls.Add(this.txtother);
@@ -984,7 +994,7 @@
         private System.Windows.Forms.TextBox txtother;
         private System.Windows.Forms.TextBox txttotaldeduc;
         private System.Windows.Forms.Button BTNBROWSE;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datepaydate;
     }
 }
 
